@@ -17,3 +17,7 @@
 ## 0.0.5
 
 * Updated Verify OTP Method.
+
+## 0.0.6
+
+* Minor Fixes.

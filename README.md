@@ -35,7 +35,7 @@ EmailOtpAuth.verifyOtp(otp: otpController.text);
 
 ## Example
 
-👉 For a complete example, refer to the [Email OTP Auth package](https://pub.dev/packages/email_otp_auth).
+👉 For a complete example, refer to the [Email OTP Auth package](https://pub.dev/packages/email_otp_auth/example).
 
 ## Report bugs or issues
 
@@ -43,6 +43,6 @@ You are welcome to open a _[ticket](https://github.com/kamesh7773/email_otp_auth
 
 ## Contributors
 
-<a href="https://github.com/kamesh7773"><img src="https://avatars.githubusercontent.com/u/88535029" width="60px;" alt="kamesh Singh" style="border-radius:50%"><br/><sub><b>kamesh7773</b></sub></a>
+<a href="https://github.com/kamesh7773"><img src="https://avatars.githubusercontent.com/u/88535029" width="60px;" alt="kamesh Singh" style="border-radius:50%"><br/><sub><b>Kamesh Singh</b></sub></a>
 
 > Copyright © 2024 **[Kamesh Singh Sisodiya](https://github.com/kamesh7773)**. Licensed under the _[MIT LICENSE](https://github.com/kamesh7773/email_otp_auth/blob/main/LICENSE)_
