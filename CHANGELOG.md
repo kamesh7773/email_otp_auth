@@ -21,3 +21,7 @@
 ## 0.0.6
 
 * Minor Fixes.
+
+## 0.0.7
+
+* Backend Routes Updated.
