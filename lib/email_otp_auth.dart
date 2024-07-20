@@ -15,7 +15,7 @@ class EmailOtpAuth {
     try {
       // creating url
       var url =
-          Uri.https("direct-robbi-kamesh-cc8a724a.koyeb.app", "/otp-login");
+          Uri.https("definite-emilee-kamesh-564a9766.koyeb.app", "/send-otp");
 
       // sending post request and getting response
       var res = await http.Client().post(
@@ -49,7 +49,7 @@ class EmailOtpAuth {
     try {
       // creating url
       var url =
-          Uri.https("direct-robbi-kamesh-cc8a724a.koyeb.app", "/otp-verify");
+          Uri.https("definite-emilee-kamesh-564a9766.koyeb.app", "/verify-otp");
 
       // sending post request and getting response
       var res = await http.Client().post(
