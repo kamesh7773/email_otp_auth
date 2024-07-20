@@ -25,3 +25,7 @@
 ## 0.0.7
 
 * Backend Routes Updated.
+
+## 0.0.8
+
+* fixing Email OTP OTP Exprierd Timer.
