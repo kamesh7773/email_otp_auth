@@ -158,14 +158,11 @@ class _HomePageState extends State<HomePage> {
 ## 🔗 Devloper Info & License 
 
 <a href="https://github.com/kamesh7773"><img src="https://avatars.githubusercontent.com/u/88535029" width="60px;" alt="kamesh Singh" style="border-radius:50%"></a>
-
 **KAMESH SINGH**  
 Flutter Developer
 
-[![GitHub](https://img.shields.io/badge/GitHub-333?style=for-the-badge&logo=github&logoColor=white)](https://github.com/your-username)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/your-linkedin)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/your-twitter-handle)
-
+[![GitHub](https://img.shields.io/badge/GitHub-333?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kamesh7773)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kamesh-singh-5baab51ba/)
 
 > Copyright © 2024 **[Kamesh Singh Sisodiya](https://github.com/kamesh7773)**. Licensed under the _[MIT LICENSE](https://github.com/kamesh7773/email_otp_auth/blob/main/LICENSE)_
 
