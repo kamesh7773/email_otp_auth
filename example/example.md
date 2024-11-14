@@ -1,4 +1,5 @@
 Here the example of all methods ✅
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:email_otp_auth/email_otp_auth.dart';

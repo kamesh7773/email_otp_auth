@@ -5,7 +5,7 @@ homepage: https://github.com/kamesh7773/email_otp_auth
 repository: https://github.com/kamesh7773/email_otp_auth
 
 environment:
-  sdk: '>=3.4.0 <4.0.0'
+  sdk: ">=3.4.0 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
@@ -24,4 +24,3 @@ topics:
   - email-verification
   - otp-authentication
   - email-otp-sender
-
