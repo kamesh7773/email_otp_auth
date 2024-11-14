@@ -157,7 +157,7 @@ class _HomePageState extends State<HomePage> {
 
 ## 🔗 Devloper Info & License 
 
-<a href="https://github.com/kamesh7773"><img src="https://avatars.githubusercontent.com/u/88535029" width="60px;" alt="kamesh Singh" style="border-radius:50%"><br/><sub><b>Kamesh Singh</b></sub></a>
+<a href="https://github.com/kamesh7773"><img src="https://avatars.githubusercontent.com/u/88535029" width="60px;" alt="kamesh Singh" style="border-radius:50%"></a>
 
 **KAMESH SINGH**  
 Flutter Developer
