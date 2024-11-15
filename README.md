@@ -7,6 +7,7 @@ A simple Flutter package for **email-based OTP authentication**! This package al
 ## 🌟 Features
 - 🔑 **Send OTP**: Generate and send a 6-digit OTP to the specified email address.
 - ✅ **Verify OTP**: Verify the OTP input to confirm the email's authenticity.
+- ⚠️ **Expiration Time**: OTP will expired after 5 minutes.
 
 ## 🚀 Installation
 
