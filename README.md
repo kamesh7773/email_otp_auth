@@ -40,103 +40,199 @@ Here's how to use the package to send and verify an OTP:
 import 'package:flutter/material.dart';
 import 'package:email_otp_auth/email_otp_auth.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
   }
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController otpController = TextEditingController();
+  // controllar's declartion
+  TextEditingController emailController = TextEditingController();
+  TextEditingController otpController = TextEditingController();
 
-  Future<void> sendOtp() async {
-    var response = await EmailOtpAuth.sendOTP(email: emailController.text);
-    if (response["message"] == "Email Sent") {
-      // Show success message
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("OTP sent successfully! ✅")),
-      );
-    } else {
-      // Handle failure
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Failed to send OTP ❌")),
-      );
-    }
-  }
-
-  Future<void> verifyOtp() async {
-    var response = await EmailOtpAuth.verifyOtp(otp: otpController.text);
-    if (response["message"] == "OTP Verified") {
-      // Show success message
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("OTP verified! 🎉")),
-      );
-    } else {
-      // Handle error cases
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Invalid or expired OTP ⚠️")),
-      );
-    }
+  // disposing of textEditingControllers
+  @override
+  void dispose() {
+    emailController.dispose();
+    otpController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    // ----------------------
+    // Method for sending OTP
+    // ----------------------
+
+    Future<void> sendOtp() async {
+      try {
+        // showing CircularProgressIndicator.
+        showDialog(
+          context: context,
+          builder: (context) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          },
+        );
+
+        // getting response from sendOTP Method.
+        var res = await EmailOtpAuth.sendOTP(email: emailController.text);
+
+        // poping out CircularProgressIndicator.
+        if (context.mounted) {
+          Navigator.of(context).pop();
+        }
+
+        // if response[message == "Email Send"] then..
+        if (res["message"] == "Email Send" && context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text("OTP Send Successfully ✅"),
+            ),
+          );
+        }
+        // else show Invalid Email Address.
+        else {
+          if (context.mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text("Invalid E-Mail Address ❌"),
+              ),
+            );
+          }
+        }
+      }
+      // error handling
+      catch (error) {
+        throw error.toString();
+      }
+    }
+
+    // ------------------------
+    // Method for verifying OTP
+    // ------------------------
+
+    Future<void> verifyOTP() async {
+      try {
+        // showing CircularProgressIndicator.
+        showDialog(
+          context: context,
+          builder: (context) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          },
+        );
+
+        // getting response from sendOTP Method.
+        var res = await EmailOtpAuth.verifyOtp(otp: otpController.text);
+
+        // poping out CircularProgressIndicator.
+        if (context.mounted) {
+          Navigator.of(context).pop();
+        }
+
+        // if response[message == "OTP Verified"] then..
+        if (res["message"] == "OTP Verified" && context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text("OTP verified ✅"),
+            ),
+          );
+        }
+        // if response[message == "Invalid OTP"] then..
+        else if (res["data"] == "Invalid OTP" && context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text("Invalid OTP ❌"),
+            ),
+          );
+        }
+        // if response[message == "OTP Expired"] then..
+        else if (res["data"] == "OTP Expired" && context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text("OTP Expired ⚠️"),
+            ),
+          );
+        }
+        // else return nothing.
+        else {
+          return;
+        }
+      } catch (error) {
+        throw error.toString();
+      }
+    }
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Email OTP Authentication"),
+        backgroundColor: Colors.deepPurple[200],
+        title: const Text('Email OTP Auth'),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            TextField(
-              controller: emailController,
-              decoration: const InputDecoration(
-                labelText: "Email Address",
-                border: OutlineInputBorder(),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextFormField(
+                controller: emailController,
+                decoration: InputDecoration(
+                  hintText: "E-mail",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
               ),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: sendOtp,
-              child: const Text("Send OTP"),
-            ),
-            const SizedBox(height: 20),
-            TextField(
-              controller: otpController,
-              decoration: const InputDecoration(
-                labelText: "Enter OTP",
-                border: OutlineInputBorder(),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: sendOtp,
+                child: const Text('Send OTP'),
               ),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: verifyOtp,
-              child: const Text("Verify OTP"),
-            ),
-          ],
+              const SizedBox(height: 20),
+              TextFormField(
+                controller: otpController,
+                decoration: InputDecoration(
+                  hintText: "OTP",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: verifyOTP,
+                child: const Text('Verify OTP'),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
 ```
 
 ## 📸 Screenshots
