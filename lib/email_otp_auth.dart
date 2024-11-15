@@ -9,12 +9,14 @@ class EmailOtpAuth {
   static String _email = "";
   static String _hash = "";
 
-  /// To send an OTP to a user's email address, use the [sendOTP] method. This method takes the recipient's email address as a parameter.
+  /// To send an OTP to a user's email address, use the [sendOTP] method.
+  /// This method takes the recipient's email address as a parameter.
   /// [email] : The email address to which the OTP will be sent.
   static Future<Map<String, dynamic>> sendOTP({required String email}) async {
     try {
       // creating url
-      var url = Uri.https("definite-emilee-kamesh-564a9766.koyeb.app", "api/send-otp");
+      var url = Uri.https(
+          "definite-emilee-kamesh-564a9766.koyeb.app", "api/send-otp");
 
       // sending post request and getting response
       var res = await http.Client().post(
@@ -40,14 +42,16 @@ class EmailOtpAuth {
     }
   }
 
-  /// To verify OTP we use the [verifyOtp] method. This method takes the recipient's OTP as a parameter.
+  /// To verify OTP we use the [verifyOtp] method. This method takes the
+  /// recipient's OTP as a parameter.
   /// [otp] : The OTP that we send via Email Address.
   static Future<Map<String, dynamic>> verifyOtp({
     required String otp,
   }) async {
     try {
       // creating url
-      var url = Uri.https("definite-emilee-kamesh-564a9766.koyeb.app", "api/verify-otp");
+      var url = Uri.https(
+          "definite-emilee-kamesh-564a9766.koyeb.app", "api/verify-otp");
 
       // sending post request and getting response
       var res = await http.Client().post(
