@@ -36,4 +36,8 @@
 
 ## 1.0.0
 
-- Backend Updated (Nodejs backend part).
+- Backend part Updated (Nodejs Nodemailer version updated).
+
+## 1.1.0
+
+- Example.md file udpated
