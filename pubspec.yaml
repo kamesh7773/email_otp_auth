@@ -1,6 +1,6 @@
 name: email_otp_auth
 description: "Email Otp Auth is a Flutter package that provides email verification via OTP (One-Time Password)"
-version: 0.0.8
+version: 0.0.9
 homepage: https://github.com/kamesh7773/email_otp_auth
 repository: https://github.com/kamesh7773/email_otp_auth
 
