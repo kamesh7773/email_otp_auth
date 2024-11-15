@@ -33,3 +33,7 @@
 ## 0.0.9
 
 - Readme.md updated.
+
+## 1.0.0
+
+- Backend Updated (Nodejs backend part).
