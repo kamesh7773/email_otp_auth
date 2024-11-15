@@ -141,9 +141,9 @@ class _HomePageState extends State<HomePage> {
 
 ## 📸 Screenshots
 
-| Home Page | Login page | Sing Up Page |
-|-----------------|-----------|-----------|
-| ![OTP Verified]() | ![OTP Invalid]() | ![OTP Expired]() |
+| OTP Send successfully ✅ | OTP Verified ✅ | OTP Invalid ⛔| OTP Expired ⚠️ |
+|----------|--------------|-------------|-------------|
+| ![OTP Send](https://github.com/kamesh7773/email_otp_auth/blob/main/assets/OTPSendSuccessfully.gif?raw=true) | ![OTP Verified](https://github.com/kamesh7773/email_otp_auth/blob/main/assets/OTPVerified.gif?raw=true) | ![OTP Invalid](https://github.com/kamesh7773/email_otp_auth/blob/main/assets/OTPInvalid.gif?raw=true) | ![OTP Expired](https://github.com/kamesh7773/email_otp_auth/blob/main/assets/OTPExpired.gif?raw=true) |
 
 --- 
 
